@@ -7,9 +7,9 @@ import SubHeading from "../components/SubHeading";
 
 const Banner = () => {
   return (
-    <section className="relative bg-[#0D554C] [clip-path:polygon(0_0,100%_0,100%_100%,0_70%)] pt-25 pb-55 overflow-hidden">
+    <section className="relative bg-[#0D554C] [clip-path:polygon(0_0,100%_0,100%_100%,0_85%)] sm:[clip-path:polygon(0_0,100%_0,100%_100%,0_75%)] lg:[clip-path:polygon(0_0,100%_0,100%_100%,0_70%)] pt-12 sm:pt-16 lg:pt-25 pb-36 sm:pb-44 lg:pb-55 overflow-hidden">
       {/* Hexagonal wireframe pattern in bottom left */}
-      <div className="absolute -bottom-8 -left-8 w-100 h-100 opacity-15 pointer-events-none">
+      <div className="absolute -bottom-8 -left-8 w-64 h-64 sm:w-80 sm:h-80 lg:w-100 lg:h-100 opacity-15 pointer-events-none">
         <svg
           viewBox="0 0 300 300"
           className="w-full h-full stroke-white fill-none"
@@ -30,17 +30,17 @@ const Banner = () => {
       </div>
 
       <Container className="relative z-10">
-        <Flex className="items-center">
-          <div className="w-1/2">
-            <h4 className="text-lg text-offwhite font-inter font-bold">
+        <Flex className="flex-col lg:flex-row items-center gap-10 lg:gap-0">
+          <div className="w-full lg:w-1/2 text-left">
+            <h4 className="text-sm sm:text-base lg:text-lg text-offwhite font-inter font-bold">
               Business & Technologies
             </h4>
-            <h1 className="pt-2.5 pb-8 leading-15.5 w-122.5 text-[52px] text-offwhite font-inter font-bold">
+            <h1 className="pt-2 sm:pt-2.5 pb-6 sm:pb-8 leading-tight sm:leading-snug lg:leading-15.5 w-full max-w-122.5 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-offwhite font-inter font-bold">
               We help tech{" "}
               <span className="relative inline-block">
                 companies deliver
                 <svg
-                  className="absolute -bottom-1 left-0 w-full h-3.5 z-0 pointer-events-none text-secondary"
+                  className="absolute -bottom-1 left-0 w-full h-2.5 sm:h-3.5 z-0 pointer-events-none text-secondary"
                   viewBox="0 0 260 15"
                   fill="none"
                   preserveAspectRatio="none"
@@ -56,27 +56,33 @@ const Banner = () => {
             </h1>
 
             <SubHeading
-              className="leading-6.75 text-base text-offwhite/90 font-inter font-normal max-w-122.5"
+              className="leading-6 sm:leading-6.75 text-sm sm:text-base text-offwhite/90 font-inter font-normal max-w-122.5"
               text="Since 1999. For millions of users. We transform businesses with powerful and adaptable digital solutions that satisfy the needs of today and unlock the opportunities of tomorrow."
             />
 
-            <div className="flex w-140 h-16 rounded-lg overflow-hidden shadow-lg mt-10">
-              <input
-                type="text"
-                placeholder=""
-                className="flex-1 h-full pl-6 pr-4 bg-white text-third font-inter text-base outline-none"
-              />
-              <Button
-                classname="h-full py-0! px-8! rounded-none! text-base font-inter font-medium shrink-0 flex items-center justify-center hover:brightness-105!"
-                text="Request for Demo"
-              />
+            <div className="w-full max-w-140 mt-8 sm:mt-10">
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex flex-col sm:flex-row w-full rounded-lg overflow-hidden shadow-lg bg-white sm:h-16 border border-white/20"
+              >
+                <input
+                  type="text"
+                  placeholder="Enter your email or domain..."
+                  aria-label="Request demo input"
+                  className="h-12 sm:h-full flex-1 px-4 sm:px-6 bg-white text-third font-inter text-sm sm:text-base outline-none min-w-0"
+                />
+                <Button
+                  classname="w-full sm:w-auto h-12 sm:h-full py-0! px-6 sm:px-8! rounded-none! text-sm sm:text-base font-inter font-medium shrink-0 flex items-center justify-center hover:brightness-105!"
+                  text="Request for Demo"
+                />
+              </form>
             </div>
           </div>
 
-          <div className="w-1/2 relative">
-            <div className="w-165 -mr-16 drop-shadow-2xl">
+          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+            <div className="w-full max-w-lg lg:max-w-140 xl:max-w-165 xl:-mr-16 drop-shadow-2xl">
               <Image
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                className="w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl block"
                 src={BannerImage}
                 alt="SaaS Dashboard Preview"
               />
@@ -91,7 +97,7 @@ const Banner = () => {
           viewBox="0 0 1440 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-full h-30"
+          className="relative block w-full h-16 sm:h-24 lg:h-30"
           preserveAspectRatio="none"
         >
           <path d="M0 60L1440 140V140H0V60Z" fill="#ffffff" />

@@ -1,6 +1,4 @@
-import React from "react";
 import Container from "../components/Container";
-import Flex from "../components/Flex";
 import Heading from "../components/Heading";
 import ArticleCard from "../components/ArticleCard";
 import News1 from "../assets/news1.png";
@@ -12,11 +10,11 @@ import Avatar3 from "../assets/avatar3.png";
 
 const Article = () => {
   return (
-    <section className="py-24 bg-[#F9FBFC]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#F9FBFC]">
       <Container>
         <Heading className="text-center" text="Recent News & Articles" />
 
-        <Flex className="justify-between items-stretch mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7.5 mt-8 sm:mt-12 justify-items-center">
           <ArticleCard
             image={News1}
             title="Where Should I Buy Next?"
@@ -41,11 +39,10 @@ const Article = () => {
             date="24/08/2021"
             text="From romantic getaways to adventurous hikes, find your next..."
           />
-        </Flex>
+        </div>
       </Container>
     </section>
   );
 };
 
 export default Article;
-

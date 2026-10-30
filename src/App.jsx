@@ -13,7 +13,7 @@ import Footer from "./layouts/Footer";
 
 const App = () => {
   return (
-    <div className="font-inter text-third bg-white antialiased min-h-screen">
+    <div className="font-inter text-third bg-white antialiased min-h-screen overflow-x-hidden w-full">
       <Navber />
       <Banner />
       <Rating />
