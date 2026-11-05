@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Container from "../components/Container";
 import Heading from "../components/Heading";
 import PricingCard from "../components/PricingCard";

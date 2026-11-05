@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Image from "../components/Image";
 import Logo from "../assets/logo.png";
@@ -10,11 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10 sm:pb-14 border-b border-white/10">
           {/* Col 1: Brand Info */}
           <div className="w-full max-w-sm">
-            <Image
-              src={Logo}
-              alt="SassPro Logo"
-              className="brightness-0 invert mb-5 sm:mb-6 h-7 sm:h-8 w-auto object-contain"
-            />
+            <Link to="/" className="inline-block focus:outline-none focus:ring-2 focus:ring-white/40 rounded-lg">
+              <Image
+                src={Logo}
+                alt="SassPro Logo"
+                className="brightness-0 invert mb-5 sm:mb-6 h-7 sm:h-8 w-auto object-contain"
+              />
+            </Link>
             <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6 font-normal">
               Since 1999. For millions of users. We transform businesses with
               powerful and adaptable digital solutions that satisfy the needs of
@@ -52,24 +55,24 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2.5 sm:space-y-3 text-sm text-white/70 font-normal">
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
-                  About Us
-                </a>
+                <Link to="/" className="hover:text-secondary transition block py-0.5">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
-                  Careers
-                </a>
+                <Link to="/products" className="hover:text-secondary transition block py-0.5">
+                  Products
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
-                  Our Team
-                </a>
+                <Link to="/pricing" className="hover:text-secondary transition block py-0.5">
+                  Pricing Plans
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
-                  Blog
-                </a>
+                <Link to="/blog" className="hover:text-secondary transition block py-0.5">
+                  Blog & News
+                </Link>
               </li>
             </ul>
           </div>
@@ -81,24 +84,24 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2.5 sm:space-y-3 text-sm text-white/70 font-normal">
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
+                <Link to="/products" className="hover:text-secondary transition block py-0.5">
                   Documentation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
+                <Link to="/contact" className="hover:text-secondary transition block py-0.5">
                   Help Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
+                <Link to="/blog" className="hover:text-secondary transition block py-0.5">
                   Guides
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition block py-0.5">
+                <Link to="/contact" className="hover:text-secondary transition block py-0.5">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,22 +1,24 @@
 import { useState, useRef, useEffect } from "react";
 import { FaAngleDown } from "react-icons/fa6";
+import { NavLink, Link } from "react-router-dom";
 
 const DEFAULT_DROPDOWNS = {
   Home: [
-    { label: "Home SaaS", href: "#" },
-    { label: "Home Business", href: "#" },
-    { label: "Home Startup", href: "#" },
+    { label: "Home SaaS", to: "/" },
+    { label: "Home Business", to: "/" },
+    { label: "Home Startup", to: "/" },
   ],
   Pages: [
-    { label: "About Us", href: "#" },
-    { label: "Our Services", href: "#" },
-    { label: "Pricing Plans", href: "#" },
-    { label: "Client Reviews", href: "#" },
+    { label: "Products", to: "/products" },
+    { label: "Pricing", to: "/pricing" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
   ],
 };
 
 const ListItem = ({
   text,
+  to = "/",
   classname = "",
   type = false,
   dropdownItems,
@@ -43,15 +45,29 @@ const ListItem = ({
   if (!type || items.length === 0) {
     return (
       <li className={`text-base text-offwhite font-medium font-inter ${isMobile ? "w-full" : "inline-block"} ${classname}`}>
-        <a
-          href="#"
+        <NavLink
+          to={to}
           onClick={(e) => {
             if (onItemClick) onItemClick(e);
           }}
-          className={`hover:text-white/80 transition duration-200 block py-1.5 ${isMobile ? "text-lg py-2.5 px-3 rounded-lg hover:bg-white/10" : ""}`}
+          className={({ isActive }) =>
+            `transition duration-200 block py-1.5 ${
+              isMobile
+                ? `text-lg py-2.5 px-3 rounded-lg ${
+                    isActive
+                      ? "bg-white/20 text-white font-semibold"
+                      : "hover:bg-white/10 hover:text-white/80"
+                  }`
+                : `${
+                    isActive
+                      ? "text-white font-semibold underline underline-offset-4 decoration-secondary decoration-2"
+                      : "hover:text-white/80"
+                  }`
+            }`
+          }
         >
           {text}
-        </a>
+        </NavLink>
       </li>
     );
   }
@@ -77,8 +93,8 @@ const ListItem = ({
           <ul className="pl-4 pr-2 py-1.5 space-y-1.5 border-l-2 border-white/20 ml-3 mt-1 animate-fadeIn">
             {items.map((subItem, idx) => (
               <li key={idx}>
-                <a
-                  href={subItem.href || "#"}
+                <Link
+                  to={subItem.to || subItem.href || "/"}
                   onClick={(e) => {
                     setIsOpen(false);
                     if (onItemClick) onItemClick(e);
@@ -86,7 +102,7 @@ const ListItem = ({
                   className="block py-1.5 px-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded transition duration-150"
                 >
                   {subItem.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -127,9 +143,9 @@ const ListItem = ({
         }`}
       >
         {items.map((subItem, idx) => (
-          <a
+          <Link
             key={idx}
-            href={subItem.href || "#"}
+            to={subItem.to || subItem.href || "/"}
             onClick={(e) => {
               setIsOpen(false);
               if (onItemClick) onItemClick(e);
@@ -137,7 +153,7 @@ const ListItem = ({
             className="block px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/15 transition duration-150"
           >
             {subItem.label}
-          </a>
+          </Link>
         ))}
       </div>
     </li>

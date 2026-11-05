@@ -1,33 +1,34 @@
-import Navber from "./layouts/Navber";
-import Banner from "./layouts/Banner";
-import Rating from "./layouts/Rating";
-import Industry from "./layouts/Industry";
-import Device from "./layouts/Device";
-import Engage from "./layouts/Engage";
-import Product from "./layouts/Product";
-import Pricing from "./layouts/Pricing";
-import Testimonial from "./layouts/Testimonial";
-import Newsletter from "./layouts/Newsletter";
-import Article from "./layouts/Article";
-import Footer from "./layouts/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
+import Home from "./pages/Home";
+import ProductsPage from "./pages/ProductsPage";
+import PricingPage from "./pages/PricingPage";
+import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
+import NotFound from "./pages/NotFound";
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "products", element: <ProductsPage /> },
+        { path: "pricing", element: <PricingPage /> },
+        { path: "blog", element: <BlogPage /> },
+        { path: "contact", element: <ContactPage /> },
+        { path: "*", element: <NotFound /> },
+      ],
+    },
+  ],
+  {
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 const App = () => {
-  return (
-    <div className="font-inter text-third bg-white antialiased min-h-screen overflow-x-hidden w-full">
-      <Navber />
-      <Banner />
-      <Rating />
-      <Industry />
-      <Device />
-      <Engage />
-      <Product />
-      <Pricing />
-      <Testimonial />
-      <Newsletter />
-      <Article />
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

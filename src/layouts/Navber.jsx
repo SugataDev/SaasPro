@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Image from "../components/Image";
@@ -36,24 +37,28 @@ const Navber = () => {
       <Container>
         <Flex className="justify-between items-center">
           {/* Brand Logo */}
-          <a href="#" className="inline-block shrink-0 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg">
+          <Link
+            to="/"
+            className="inline-block shrink-0 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg"
+          >
             <Image src={Logo} alt="Logo" className="h-7 sm:h-8 w-auto object-contain" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation (>= lg) */}
           <div className="hidden lg:flex items-center gap-x-9">
             <ul className="flex items-center gap-x-7.5">
-              <ListItem type={true} text="Home" />
-              <ListItem type={true} text="Pages" />
-              <ListItem text="About Us" />
-              <ListItem text="Services" />
-              <ListItem text="Blog" />
-              <ListItem text="Contact" />
+              <ListItem to="/" text="Home" />
+              <ListItem to="/products" text="Products" />
+              <ListItem to="/pricing" text="Pricing" />
+              <ListItem to="/blog" text="Blog" />
+              <ListItem to="/contact" text="Contact" />
             </ul>
-            <Button
-              classname="bg-transparent py-2.5! px-5.75! hover:bg-secondary hover:border-amber-50 border-white hover:text-white text-white"
-              text="Let's talk"
-            />
+            <Link to="/contact">
+              <Button
+                classname="bg-transparent py-2.5! px-5.75! hover:bg-secondary hover:border-amber-50 border-white hover:text-white text-white"
+                text="Let's talk"
+              />
+            </Link>
           </div>
 
           {/* Mobile Hamburger Toggle Button (< lg) */}
@@ -85,33 +90,31 @@ const Navber = () => {
           >
             <ul className="flex flex-col space-y-2">
               <ListItem
-                type={true}
+                to="/"
                 text="Home"
                 isMobile={true}
                 onItemClick={closeMenu}
               />
               <ListItem
-                type={true}
-                text="Pages"
+                to="/products"
+                text="Products"
                 isMobile={true}
                 onItemClick={closeMenu}
               />
               <ListItem
-                text="About Us"
+                to="/pricing"
+                text="Pricing"
                 isMobile={true}
                 onItemClick={closeMenu}
               />
               <ListItem
-                text="Services"
-                isMobile={true}
-                onItemClick={closeMenu}
-              />
-              <ListItem
+                to="/blog"
                 text="Blog"
                 isMobile={true}
                 onItemClick={closeMenu}
               />
               <ListItem
+                to="/contact"
                 text="Contact"
                 isMobile={true}
                 onItemClick={closeMenu}
@@ -119,11 +122,12 @@ const Navber = () => {
             </ul>
 
             <div className="pt-6 mt-4 border-t border-white/15">
-              <Button
-                classname="w-full justify-center text-center bg-transparent py-3! px-5.75! hover:bg-secondary hover:border-white border-white hover:text-white text-white rounded-lg"
-                text="Let's talk"
-                onClick={closeMenu}
-              />
+              <Link to="/contact" onClick={closeMenu} className="block w-full">
+                <Button
+                  classname="w-full justify-center text-center bg-transparent py-3! px-5.75! hover:bg-secondary hover:border-white border-white hover:text-white text-white rounded-lg"
+                  text="Let's talk"
+                />
+              </Link>
             </div>
           </div>
         </div>
