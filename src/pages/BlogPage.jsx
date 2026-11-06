@@ -25,9 +25,6 @@ const BlogPage = () => {
 
         <Container className="relative z-10">
           <div className="max-w-200 mx-auto px-4">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 text-offwhite border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
-              Resources & Insights
-            </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-offwhite font-inter leading-tight sm:leading-snug">
               News, Stories & Industry{" "}
               <span className="relative inline-block">

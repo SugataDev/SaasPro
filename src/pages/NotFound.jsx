@@ -9,12 +9,14 @@ const NotFound = () => {
   return (
     <section className="min-h-[70vh] flex items-center justify-center py-16 sm:py-24 bg-[#F9FBFC] relative overflow-hidden">
       {/* Subtle background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#2C83BB]/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <Container className="relative z-10 text-center">
         <div className="max-w-xl mx-auto px-4">
           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#EAF2F8] text-secondary flex items-center justify-center mx-auto mb-6 shadow-sm">
-            <FaCompass className="text-3xl sm:text-4xl animate-spin" style={{ animationDuration: "12s" }} />
+            <FaCompass
+              className="text-3xl sm:text-4xl animate-spin"
+              style={{ animationDuration: "12s" }}
+            />
           </div>
 
           <span className="text-secondary font-bold text-6xl sm:text-8xl lg:text-9xl font-inter block leading-none tracking-tight">

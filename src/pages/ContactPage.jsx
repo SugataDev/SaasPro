@@ -71,9 +71,6 @@ const ContactPage = () => {
 
         <Container className="relative z-10">
           <div className="max-w-200 mx-auto px-4">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 text-offwhite border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
-              Get In Touch
-            </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-offwhite font-inter leading-tight sm:leading-snug">
               Let's Connect and Build Together
             </h1>
@@ -112,7 +109,8 @@ const ContactPage = () => {
                 text="Speak to Our Team"
               />
               <p className="text-[#495E6C] text-sm sm:text-base leading-relaxed font-inter font-normal mt-3 mb-8">
-                Fill out the form or reach us directly via email, phone, or visit our headquarters.
+                Fill out the form or reach us directly via email, phone, or
+                visit our headquarters.
               </p>
 
               <div className="space-y-6 text-[#495E6C] font-inter text-sm sm:text-base">
@@ -121,8 +119,12 @@ const ContactPage = () => {
                     <FaLocationDot className="text-base" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-third text-sm sm:text-base">Office Address</h4>
-                    <p className="mt-1">4517 Washington Ave. Manchester, Kentucky 39495</p>
+                    <h4 className="font-bold text-third text-sm sm:text-base">
+                      Office Address
+                    </h4>
+                    <p className="mt-1">
+                      4517 Washington Ave. Manchester, Kentucky 39495
+                    </p>
                   </div>
                 </div>
 
@@ -131,7 +133,9 @@ const ContactPage = () => {
                     <FaEnvelope className="text-base" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-third text-sm sm:text-base">Email Us</h4>
+                    <h4 className="font-bold text-third text-sm sm:text-base">
+                      Email Us
+                    </h4>
                     <a
                       href="mailto:contact@sasspro.com"
                       className="mt-1 block hover:text-secondary transition text-third font-medium"
@@ -146,7 +150,9 @@ const ContactPage = () => {
                     <FaPhone className="text-base" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-third text-sm sm:text-base">Call Us</h4>
+                    <h4 className="font-bold text-third text-sm sm:text-base">
+                      Call Us
+                    </h4>
                     <a
                       href="tel:+15551234567"
                       className="mt-1 block hover:text-secondary transition text-third font-medium"
@@ -161,8 +167,12 @@ const ContactPage = () => {
                     <FaClock className="text-base" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-third text-sm sm:text-base">Working Hours</h4>
-                    <p className="mt-1">Monday – Friday: 9:00 AM – 6:00 PM EST</p>
+                    <h4 className="font-bold text-third text-sm sm:text-base">
+                      Working Hours
+                    </h4>
+                    <p className="mt-1">
+                      Monday – Friday: 9:00 AM – 6:00 PM EST
+                    </p>
                   </div>
                 </div>
               </div>
@@ -216,7 +226,8 @@ const ContactPage = () => {
                     Message Sent Successfully!
                   </h3>
                   <p className="text-[#495E6C] text-sm sm:text-base max-w-md mx-auto mb-6">
-                    Thank you for reaching out. One of our solution specialists will get back to you shortly.
+                    Thank you for reaching out. One of our solution specialists
+                    will get back to you shortly.
                   </p>
                   <Button
                     text="Send Another Message"
@@ -307,7 +318,9 @@ const ContactPage = () => {
                     <Button
                       type="submit"
                       classname="w-full sm:w-auto py-3.5! px-8! flex items-center justify-center"
-                      text={isSubmitting ? "Sending Message..." : "Send Message"}
+                      text={
+                        isSubmitting ? "Sending Message..." : "Send Message"
+                      }
                     />
                   </div>
                 </form>
